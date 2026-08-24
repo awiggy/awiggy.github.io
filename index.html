@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的个人网站</title>
+  <meta name="description" content="个人网站 - 展示我的经历、技能与作品" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <style>
+    :root {
+      --text: #2c2e2a;          /* 墨黑 */
+      --bg: #f5f1e4;            /* 奶油纸 */
+      --surface: #ffffff;       /* 纯白卡片 */
+      --border: #2c2e2a;        /* 边框 */
+      --border-muted: #80827f;  /* 弱化边框 */
+      --accent: #8ed462;        /* 鲜绿 */
+      --coral: #ff705d;         /* 珊瑚红 */
+      --yellow: #f5e211;        /* 明黄 */
+      --blue: #2ba0ff;          /* 天空蓝 */
+      --radius-lg: 50px;
+      --radius-md: 32px;
+      --radius-pill: 50px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img, svg { display: block; max-width: 100%; }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+    /* ============ 导航：白色悬浮胶囊 ============ */
+    nav {
+      position: sticky;
+      top: 20px;
+      z-index: 100;
+      padding: 0 28px;
+    }
+    .nav-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: var(--surface);
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 20px 14px 28px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .logo-dot {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+    }
+    .nav-links { display: flex; gap: 4px; list-style: none; }
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 500;
+      padding: 10px 18px;
+      border-radius: 50px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { background: var(--bg); }
+    .nav-links a.cta { background: var(--text); color: var(--surface); }
+    .nav-links a.cta:hover { background: var(--coral); }
+    .nav-toggle { display: none; }
+
+    /* ============ Hero ============ */
+    .hero {
+      padding: 110px 0 80px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 56px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 500;
+      background: var(--accent);
+      border-radius: 50px;
+      padding: 9px 20px;
+      margin-bottom: 32px;
+    }
+    .hero h1 {
+      font-size: clamp(64px, 9vw, 128px);
+      font-weight: 500;
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      margin-bottom: 28px;
+    }
+    .hero h1 .accent-word { color: var(--accent); }
+    .hero p {
+      font-size: 20px;
+      font-weight: 400;
+      max-width: 480px;
+      margin-bottom: 40px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 16px; }
+
+    /* 珊瑚色胶囊按钮 */
+    .btn-coral {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--coral);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 11px 20px 11px 20px;
+      border-radius: 50px;
+      transition: transform 0.15s;
+    }
+    .btn-coral:hover { transform: translateY(-2px); }
+    .btn-coral .circle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #fff;
+      flex-shrink: 0;
+    }
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 11px 24px;
+      border-radius: 50px;
+      border: 2px solid var(--text);
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { background: var(--text); color: var(--surface); }
+
+    /* 剪纸插画 */
+    .hero-art { position: relative; }
+    .hero-art svg { width: 100%; height: auto; }
+
+    /* ============ 通用 section ============ */
+    section { padding: 90px 0; }
+    .section-head { margin-bottom: 56px; }
+    .section-kicker {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      border: 2px solid var(--text);
+      border-radius: 50px;
+      padding: 6px 18px;
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 500;
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+    }
+    .section-title .accent { color: var(--accent); }
+    .section-sub {
+      font-size: 18px;
+      color: var(--border-muted);
+      margin-top: 20px;
+      max-width: 560px;
+    }
+
+    /* ============ 关于 ============ */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+    }
+    .card h3 { font-size: 28px; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 16px; }
+    .card p { font-size: 17px; color: var(--text); margin-bottom: 14px; }
+    .card p:last-child { margin-bottom: 0; }
+    .card p.muted { color: var(--border-muted); }
+
+    /* 统计卡片 - 装饰色块 */
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .stat-card {
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 180px;
+    }
+    .stat-card.green { background: var(--accent); }
+    .stat-card.yellow { background: var(--yellow); }
+    .stat-card.blue { background: var(--blue); }
+    .stat-card.coral { background: var(--coral); }
+    .stat-card .num {
+      font-size: clamp(48px, 6vw, 80px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--text);
+    }
+    .stat-card.coral .num { color: #fff; }
+    .stat-card .label { font-size: 16px; font-weight: 500; }
+
+    /* ============ 技能 ============ */
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .skill-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+    }
+    .skill-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+    .skill-icon.green { background: var(--accent); }
+    .skill-icon.yellow { background: var(--yellow); }
+    .skill-icon.blue { background: var(--blue); }
+    .skill-icon.coral { background: var(--coral); }
+    .skill-icon.lime { background: #c9f26b; }
+    .skill-icon.lavender { background: #c7b9ff; }
+    .skill-card h3 { font-size: 22px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 10px; }
+    .skill-card p { font-size: 16px; color: var(--border-muted); }
+
+    /* ============ 作品 ============ */
+    .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+    .project-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s;
+    }
+    .project-card:hover { transform: translateY(-4px); }
+    .project-emoji {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      margin-bottom: 24px;
+    }
+    .project-card h3 { font-size: 24px; font-weight: 500; letter-spacing: -0.01em; margin-bottom: 12px; }
+    .project-card p { font-size: 16px; color: var(--border-muted); margin-bottom: 24px; flex: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 6px 14px;
+      border-radius: 50px;
+      border: 2px solid var(--text);
+    }
+
+    /* ============ 联系 ============ */
+    .contact-card {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 64px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-card h2 {
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1.0;
+      margin-bottom: 20px;
+    }
+    .contact-card p { font-size: 18px; color: var(--border-muted); max-width: 520px; margin: 0 auto 40px; }
+    .contact-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+
+    /* ============ 页脚黄色色带 ============ */
+    footer {
+      background: var(--yellow);
+      padding: 56px 0;
+      margin-top: 40px;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .footer-brand { font-size: 28px; font-weight: 500; letter-spacing: -0.02em; }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 15px; font-weight: 500; border-bottom: 2px solid var(--text); }
+    .footer-note { font-size: 14px; }
+
+    /* ============ 动画 ============ */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============ 响应式 ============ */
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; padding-top: 60px; }
+      .hero-art { order: -1; max-width: 360px; margin: 0 auto; }
+      .hero h1 { font-size: clamp(56px, 14vw, 90px); }
+      .about-grid, .stats-grid { grid-template-columns: 1fr; }
+      .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 28px;
+        right: 28px;
+        background: var(--surface);
+        border-radius: 32px;
+        flex-direction: column;
+        padding: 16px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: var(--text);
+        padding: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 导航 -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#home" class="logo">
+        <span class="logo-dot"></span>
+        我的主页
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">关于</a></li>
+        <li><a href="#skills">技能</a></li>
+        <li><a href="#projects">作品</a></li>
+        <li><a href="#contact" class="cta">联系我</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="菜单">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="container">
+    <div class="hero" id="home">
+      <div>
+        <span class="hero-eyebrow">👋 你好，欢迎来到我的主页</span>
+        <h1>你好，我是<span class="accent-word">你的名字</span></h1>
+        <p>我热爱创造，专注于「你的领域」。我喜欢把想法变成现实，用技术与设计解决问题。</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-coral">查看我的作品 <span class="circle"></span></a>
+          <a href="#contact" class="btn-ghost">联系我</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <!-- 剪纸风插画：扁平鲜艳色块 -->
+        <svg viewBox="0 0 400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="150" r="130" fill="#8ed462"/>
+          <circle cx="152" cy="122" r="13" fill="#2c2e2a"/>
+          <circle cx="248" cy="122" r="13" fill="#2c2e2a"/>
+          <path d="M160 178 Q200 210 240 178" stroke="#2c2e2a" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <path d="M200 280 Q200 360 200 420 L165 420 Q165 360 165 320 Q165 300 200 280 Z" fill="#ff705d"/>
+          <path d="M200 280 Q235 360 235 420 L200 420 Z" fill="#ff705d"/>
+          <circle cx="120" cy="340" r="34" fill="#f5e211"/>
+          <circle cx="300" cy="320" r="42" fill="#2ba0ff"/>
+          <circle cx="335" cy="200" r="20" fill="#f5e211"/>
+          <circle cx="70" cy="230" r="16" fill="#2ba0ff"/>
+          <path d="M40 80 L60 60 L80 80 L60 100 Z" fill="#c7b9ff"/>
+          <path d="M330 60 L350 40 L370 60 L350 80 Z" fill="#c9f26b"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- 关于 -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">关于我</span>
+        <h2 class="section-title">简单介绍<br /><span class="accent">一下我自己</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="card reveal">
+          <h3>嗨，很高兴认识你 👋</h3>
+          <p>我是一名对「技术与设计」充满热情的人，拥有 X 年行业经验，专注于打造高质量、有影响力的产品。</p>
+          <p class="muted">我相信好的作品源于对细节的执着和对用户的理解。无论是设计、开发还是创作，我都追求把每一件事做到最好。</p>
+          <p class="muted">工作之余，我喜欢阅读、旅行、摄影，不断探索世界的新可能。</p>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-card green reveal">
+            <div class="num" data-count="5">0</div>
+            <div class="label">年经验</div>
+          </div>
+          <div class="stat-card yellow reveal">
+            <div class="num" data-count="30">0</div>
+            <div class="label">完成项目</div>
+          </div>
+          <div class="stat-card blue reveal">
+            <div class="num" data-count="20">0</div>
+            <div class="label">合作客户</div>
+          </div>
+          <div class="stat-card coral reveal">
+            <div class="num" data-count="10">0</div>
+            <div class="label">获得奖项</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">我的技能</span>
+        <h2 class="section-title">我擅长的<br /><span class="accent">一些领域</span></h2>
+        <p class="section-sub">保持好奇，持续学习，用不同的能力组合解决真实的问题。</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card reveal">
+          <div class="skill-icon green">💻</div>
+          <h3>Web 开发</h3>
+          <p>使用现代框架构建响应式、高性能的网站和应用。</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon yellow">🎨</div>
+          <h3>UI/UX 设计</h3>
+          <p>注重用户体验，设计简洁直观、美观的界面。</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon blue">📱</div>
+          <h3>移动开发</h3>
+          <p>跨平台移动应用开发，覆盖 iOS 与 Android。</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon coral">📊</div>
+          <h3>数据分析</h3>
+          <p>从数据中洞察价值，用数据驱动决策。</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon lime">🤖</div>
+          <h3>人工智能</h3>
+          <p>探索 AI 技术，构建智能化的产品与解决方案。</p>
+        </div>
+        <div class="skill-card reveal">
+          <div class="skill-icon lavender">✍️</div>
+          <h3>内容创作</h3>
+          <p>撰写技术文章，分享知识与经验。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 作品 -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker">精选作品</span>
+        <h2 class="section-title">一些我引以为豪<br /><span class="accent">的项目</span></h2>
+        <p class="section-sub">每一个项目都是一次认真投入的探索。</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal">
+          <div class="project-emoji" style="background:#8ed462">🌐</div>
+          <h3>网站平台</h3>
+          <p>一个功能完整的网站平台，提供流畅的用户体验和强大的后台管理能力。</p>
+          <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-emoji" style="background:#f5e211">📱</div>
+          <h3>移动应用</h3>
+          <p>跨平台移动应用，帮助用户高效管理日常生活，获得广泛好评。</p>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">Firebase</span></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-emoji" style="background:#2ba0ff">🤖</div>
+          <h3>AI 助手</h3>
+          <p>基于大语言模型的智能助手，能够理解和回答用户的各种问题。</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">API</span></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-emoji" style="background:#ff705d">📊</div>
+          <h3>数据可视化</h3>
+          <p>将复杂数据转化为直观的图表和仪表盘，辅助决策分析。</p>
+          <div class="tags"><span class="tag">D3.js</span><span class="tag">Vue</span></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-emoji" style="background:#c9f26b">🎮</div>
+          <h3>创意游戏</h3>
+          <p>一款休闲创意小游戏，融合了精美的画面和有趣的玩法机制。</p>
+          <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-emoji" style="background:#c7b9ff">🛒</div>
+          <h3>电商系统</h3>
+          <p>完整的电商解决方案，包含商品管理、订单处理和支付集成。</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">Stripe</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-card reveal">
+        <h2>联系我</h2>
+        <p>如果你有任何想法、合作机会，或者只是想打个招呼，欢迎随时联系我！</p>
+        <div class="contact-actions">
+          <a href="mailto:your-email@example.com" class="btn-coral">发邮件给我 <span class="circle"></span></a>
+          <a href="https://github.com/yourusername" target="_blank" rel="noopener" class="btn-ghost">🐙 GitHub</a>
+          <a href="https://twitter.com/yourusername" target="_blank" rel="noopener" class="btn-ghost">🐦 Twitter</a>
+          <a href="https://weixin.qq.com" target="_blank" rel="noopener" class="btn-ghost">💬 微信</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚黄色色带 -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">我的主页</div>
+      <div class="footer-links">
+        <a href="#about">关于</a>
+        <a href="#skills">技能</a>
+        <a href="#projects">作品</a>
+        <a href="#contact">联系</a>
+      </div>
+      <div class="footer-note">© 2024 用心打造</div>
+    </div>
+  </footer>
+
+  <script>
+    // 移动端菜单
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // 滚动渐显
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // 数字递增
+    const countObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const target = +el.dataset.count;
+          let current = 0;
+          const step = Math.max(1, Math.ceil(target / 50));
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = current;
+          }, 24);
+          countObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+  </script>
+</body>
+</html>
