@@ -11,6 +11,7 @@
 - `assets/notebook-git.webp`：粉色 Git Clear 笔记本。
 - 三张图片使用内置 imagegen 工具生成（built-in image generation），透明背景，1086 × 1448，转换为 WebP 交付。这些是装饰性项目视觉，不是产品实物或运行截图。
 - `assets/qingbao-dashboard.png`：从[轻报项目公开仓库](https://github.com/awiggy/qingbao-expense-mvp/blob/main/docs/images/dashboard.png)保存的实际运行截图，展示 TEST 演示数据。与站点一同托管，未改动截图内容。
+- `assets/luma-home.png`：用户提供的 Luma「日光之间」首页原始预览图（2940 × 1602），原样保存；同图见 [Luma 仓库](https://github.com/awiggy/luma/blob/main/docs/images/luma-home.png)。未通过生成工具重画界面，不代表产品已在线部署。
 - GAME HUB 图为 CSS 装饰性展示，不是运行截图。
 - 图标与贴纸是本站 SVG 形状，不来自原站素材。
 
