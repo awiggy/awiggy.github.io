@@ -1,35 +1,34 @@
-# awiggy.github.io · 张宛瑜的产品作品集
+# awiggy · 产品笔记本
 
-AI 产品作品集，展示产品实践、可复用 AI Skills 与工作方式。
+张宛瑜的个人 AI 产品作品集，在线访问：[awiggy.github.io](https://awiggy.github.io/)。
 
-## 内容结构
+## 页面内容
 
-- 个人介绍：从数据分析走向 AI 产品，关注 Agent、RAG 与评测。
-- 精选作品：轻报 Qingbao、Git Agent Clear、GAME HUB，分别标明当前状态与体验入口。
-- AI Skills：产品交付工具箱、产品拆解、中文写作共创，以及完整合集入口。
-- 关于与交流：工作方法及 GitHub 入口，不设置虚构履历或示例联系方式。
+- 个人介绍与工作方法：从数据分析走向 AI 产品，关注 Agent、RAG 与评测。
+- 三个项目：轻报 Qingbao、Git Agent Clear、GAME HUB；明确标注本地 MVP、可安装、可在线体验，以及尚待验证的部分。
+- 三个精选 Skills：产品交付、产品拆解、写作共创；附完整合集入口。
+- 问答、GitHub 联系入口；不使用虚构履历、客户统计或示例联系方式。
 
-**在线访问**：https://awiggy.github.io/
+## 设计与技术
 
-## 技术
+2026-09-21 重新制作。参考 Superr 的实物笔记本、奶油纸底、橙色手写批注、黄色便签和大幅留白；使用自己的项目内容与独立生成素材，不复制原站品牌或产品文案。字体与中文排版为适配版本，不宣称像素级复刻。
 
-- 纯静态单页：`index.html`、`style.css` 与 `site.js`，无构建依赖
-- 奶油纸底色、鼠尾草绿与低饱和辅助色；统一字号、留白与卡片布局
-- 手机菜单支持展开、收起与 Escape；支持键盘焦点、减少动画偏好与无 JS 内容阅读
-- 无第三方脚本或表单；轻报预览图引用其公开仓库的实际运行截图
-- 修改后推送到 `main` 分支即自动上线（GitHub Pages）
+纯静态 HTML / CSS / JavaScript，无构建依赖、无第三方运行脚本。字体与图片随站点托管，避免预览图依赖外站实时加载。素材、字体许可证与生成提示词见 [ASSETS.md](ASSETS.md)。
+
+交互包括项目折叠面板、键盘可操作的 Skills 标签页、问答折叠、页内跳转。禁用 JavaScript 后所有 Skills 仍可阅读。支持减少动态效果偏好和打印阅读。
 
 ## 本地预览
 
-直接用浏览器打开 `index.html`，或：
-
-```bash
+```sh
 python3 -m http.server 8000
-# 访问 http://localhost:8000
 ```
 
-## 更新与验收
+访问 http://localhost:8000 。修改正文在 `index.html`，视觉在 `style.css`，交互在 `site.js`。
 
-修改 `index.html` 中的项目或 Skill 卡片即可更新内容。状态描述须与目标仓库保持一致，不把演示功能写成正式能力。
+## 发布与回溯
 
-发布前检查：手机/平板/桌面无横向溢出；导航锚点有效；所有外链可访问；菜单可用键盘操作；图片加载成功；页面无模板占位文字。推送后确认 Pages 构建成功，再检查线上内容。
+推送 `main` 后由 GitHub Pages 自动发布。发布前执行 `node --check site.js`、`git diff --check`，并检查不同屏宽的页面与交互；发布后确认 Pages 构建和线上版本。
+
+改版前版本保存在远端分支 `backup/portfolio-before-superr-20260921`，可比较或取回文件。无需重写 Git 历史。
+
+维护内容时请同步核对项目实际能力，不把演示写成生产可用。检查记录见 [VALIDATION.md](VALIDATION.md)。

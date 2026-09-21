@@ -2,61 +2,122 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>张宛瑜 · awiggy — AI 产品与工作流</title>
-<meta name="description" content="张宛瑜的 AI 产品作品集：轻报报销 MVP、Git Agent Clear、GAME HUB，以及产品分析、开发交付和中文写作 Skills。">
-<meta name="theme-color" content="#f6f5ee"><link rel="canonical" href="https://awiggy.github.io/">
-<meta property="og:title" content="张宛瑜 · awiggy — AI 产品与工作流"><meta property="og:description" content="从具体问题出发，用可体验的作品检验想法。"><meta property="og:type" content="website"><meta property="og:url" content="https://awiggy.github.io/">
-<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+<title>meet awiggy — 张宛瑜的产品笔记本</title>
+<meta name="description" content="张宛瑜的产品笔记本。AI 产品经理的三个项目、可复用 Skills，以及从问题到原型的工作方法。">
+<meta name="theme-color" content="#fdfbf9"><link rel="canonical" href="https://awiggy.github.io/">
+<meta property="og:title" content="meet awiggy — 张宛瑜的产品笔记本"><meta property="og:description" content="把具体问题，做成可以体验的作品。"><meta property="og:type" content="website"><meta property="og:url" content="https://awiggy.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/LilitaOne-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="assets/notebook-awiggy.webp" as="image">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <a class="skip" href="#main">跳到主要内容</a>
-<header><nav class="wrap nav" aria-label="主导航">
-<a class="brand" href="#home" aria-label="awiggy 首页"><span class="brand-mark" aria-hidden="true">a.</span>awiggy.</a>
-<ul id="nav-links"><li><a href="#projects">精选作品</a></li><li><a href="#skills">AI Skills</a></li><li><a href="#about">关于我</a></li><li><a class="nav-github" href="https://github.com/awiggy" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li></ul>
-<button id="menu" aria-expanded="true" aria-controls="nav-links" hidden>菜单</button>
-</nav></header>
+<svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<symbol id="hand" viewBox="0 0 70 80"><path d="M19 38 13 19c-2-8 8-10 11-3l7 17-7-23c-2-8 9-11 12-3l6 23-2-21c-1-8 10-8 11 0l3 25 2-12c1-8 11-6 10 2l-3 31C62 72 44 80 28 74 9 67 5 58 9 46c3-9 10-12 17-10l12 9c6 6-1 15-7 10l-8-6" fill="#fdfbf9" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="star" viewBox="0 0 120 120"><path d="m60 6 13 33 36-6-20 30 21 31-37-4-18 26-10-34-36-6 29-24L28 19l25 15Z" fill="currentColor" stroke="#2b1a07" stroke-width="3" stroke-linejoin="round"/><ellipse cx="51" cy="56" rx="3" ry="6" fill="#2b1a07"/><ellipse cx="69" cy="58" rx="3" ry="6" fill="#2b1a07"/><path d="M50 72q9 8 19-1" fill="none" stroke="#2b1a07" stroke-width="3" stroke-linecap="round"/></symbol>
+<symbol id="heart" viewBox="0 0 120 120"><path d="M60 107C36 92 3 60 10 32 17 5 49 7 60 28 80-3 118 16 111 46c-7 28-25 45-51 61Z" fill="currentColor" stroke="#2b1a07" stroke-width="3" stroke-linejoin="round"/><ellipse cx="48" cy="53" rx="4" ry="7" fill="#2b1a07"/><ellipse cx="74" cy="53" rx="4" ry="7" fill="#2b1a07"/><path d="M51 75q10 8 18-2" fill="none" stroke="#2b1a07" stroke-width="3" stroke-linecap="round"/></symbol>
+<symbol id="flower" viewBox="0 0 120 120"><path d="M59 32C31-13 2 31 34 48-13 53 9 94 41 77c-7 46 42 46 39 5 35 29 59-14 21-31 38-29-5-59-26-26-3-15-14-15-16 7Z" fill="currentColor" stroke="#2b1a07" stroke-width="3"/><circle cx="62" cy="60" r="18" fill="#fdfbf9" stroke="#2b1a07" stroke-width="3"/><path d="M55 58v3m14-3v3m-12 7q5 3 10-1" stroke="#2b1a07" stroke-width="3" stroke-linecap="round" fill="none"/></symbol>
+<symbol id="bolt" viewBox="0 0 100 130"><path d="M58 4 7 75l38 1-8 49 58-77-42 6 5-50Z" fill="currentColor" stroke="#2b1a07" stroke-width="3" stroke-linejoin="round"/></symbol>
+<symbol id="arrow" viewBox="0 0 160 100"><path d="M6 12c78-20 137 5 112 39-10 14-40 0-18-10 29-13 60 15 40 47m-16-19 16 21 13-21" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+<header class="site-header">
+<a href="#home" class="home-mark" aria-label="awiggy 首页"><svg viewBox="0 0 70 80" aria-hidden="true"><use href="#hand"/></svg></a>
+<a class="pill header-action" href="#projects">打开作品集 ↗</a>
+</header>
 <main id="main">
-<div class="wrap" id="home"><div class="hero">
-<div><div class="eyebrow mono"><span class="dot"></span>AI PRODUCT · WORKFLOWS · MAKING</div>
-<h1>从一个具体问题，<br>到一件<em>可用的作品。</em></h1>
-<p class="intro">你好，我是<strong>张宛瑜 / awiggy</strong>，一名从数据分析走向 AI 产品的产品经理。关注 Agent、RAG 与评测，也用 AI 编程工具，把想法做成可以体验和验证的原型。</p>
-<div class="actions"><a class="button primary" href="#projects">看看我的作品 <span aria-hidden="true">↗</span></a><a class="button" href="#about">认识一下我 <span aria-hidden="true">↓</span></a></div>
-<p class="hero-note">理解业务 <span>/</span> 构建原型 <span>/</span> 验证与迭代</p></div>
-<aside class="desk" aria-label="我的产品工作思路"><div class="desk-title mono"><span>THE PRODUCT NOTEBOOK</span><span>AW / 01</span></div>
-<div class="note"><div class="mono">A QUESTION TO START WITH</div><h2>这件事，真的需要 AI 吗？</h2><p>先理解人的任务，再决定 AI 的位置。<br>把判断、规则和确认留在合适的环节。</p><div class="flow"><span>具体问题</span><i aria-hidden="true">→</i><span>可用原型</span><i aria-hidden="true">→</i><span>真实验证</span></div></div>
-<div class="desk-bottom"><div class="small-note"><div class="mono">WORKING PRINCIPLE</div><strong>让结果可追溯。</strong><p>也让失败有恢复的路径。</p></div><div class="seal" aria-hidden="true">✳</div></div><p class="desk-caption mono">BUILD SMALL. LEARN BY MAKING.</p></aside>
-</div><div class="index-strip"><span class="mono">SELECTED PRACTICE</span><span>01 &nbsp; 业务流程</span><span>02 &nbsp; 工具体验</span><span>03 &nbsp; 可复用方法</span></div></div>
-
-<section id="projects" class="wrap" aria-labelledby="projects-title">
-<div class="section-head"><div><p class="kicker mono">01 / SELECTED WORK</p><h2 id="projects-title">让想法，有一个落点。</h2></div><p>从报销流程到桌面工具与在线交互。<br>每个项目，都有具体的使用场景和验证边界。</p></div>
-<article class="featured">
-<div class="project-copy"><div class="project-meta"><span class="mono">01 / BUSINESS WORKFLOW</span><span class="status">本地 MVP</span></div><h3>轻报 Qingbao</h3><p class="project-sub">AI 辅助报销流程</p><p class="project-desc">从票据上传、费用核对到审批与模拟结算，串联员工、审批人和财务三种演示角色。把异常处理、状态流转与人工确认放进完整流程。</p>
-<ul class="details"><li><b>关注点</b>业务闭环 · 异常路径 · 记录可追溯</li><li><b>AI 边界</b>可选模型接口；真实连通性与效果仍待验证</li></ul>
-<div class="tags"><span>React / TypeScript</span><span>Express / SQLite</span><span>可选本机 OCR</span></div>
-<div class="project-actions"><a class="button primary" href="https://github.com/awiggy/qingbao-expense-mvp" target="_blank" rel="noopener noreferrer">查看项目 ↗</a><a class="text-link" href="https://github.com/awiggy/qingbao-expense-mvp/blob/main/docs/LOCAL_GUIDE.zh-CN.md" target="_blank" rel="noopener noreferrer">本地体验指南</a></div></div>
-<div class="preview"><p class="mono">QINGBAO / PRODUCT PREVIEW</p><div class="window"><div class="window-bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="https://raw.githubusercontent.com/awiggy/qingbao-expense-mvp/main/docs/images/dashboard.png" alt="轻报实际运行的报销工作台，展示费用统计与流程入口，使用 TEST 演示数据" width="1440" height="900" loading="lazy"></div><p class="caption">实际运行界面 · TEST 演示数据<br>本地 MVP，非生产财务系统；不执行真实付款。</p></div>
-</article>
-<div class="project-grid">
-<article class="project"><div class="project-visual git-visual" aria-label="Git 操作流程示意"><span class="visual-label mono">WORKFLOW STUDY / NOT A SCREENSHOT</span><div class="git-flow"><span>检查改动</span><i></i><span>保存版本</span><i></i><span>远程同步</span></div></div>
-<div class="project-copy"><div class="project-meta"><span class="mono">02 / DESKTOP TOOL</span><span class="status">可下载安装</span></div><h3>Git Agent Clear</h3><p class="project-sub">让复杂操作，有清晰的下一步</p><p class="project-desc">引导式桌面 Git 客户端。将提交、同步、版本历史与冲突处理组织成任务页面，说明影响、风险与撤回方式。AI 合并建议由用户确认后应用。</p><ul class="details"><li>提供 macOS、Windows、Linux 安装包。</li><li>真实账号、AI 请求与应用内升级仍有待验收项。</li></ul><div class="tags"><span>Rust / egui</span><span>操作引导</span><span>人工确认</span></div><div class="project-actions"><a class="button" href="https://github.com/awiggy/git-clear-desktop/releases/latest" target="_blank" rel="noopener noreferrer">下载安装 ↗</a><a class="text-link" href="https://github.com/awiggy/git-clear-desktop" target="_blank" rel="noopener noreferrer">项目仓库</a></div></div></article>
-<article class="project"><div class="project-visual game-visual" aria-hidden="true"><span class="visual-label mono">A LITTLE ROOM FOR PLAY</span><div class="tiles"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="game-word">GAME<br>HUB_</div></div>
-<div class="project-copy"><div class="project-meta"><span class="mono">03 / WEB EXPERIENCE</span><span class="status">可在线体验</span></div><h3>游戏大全 GAME HUB</h3><p class="project-sub">从发现，到点开即玩</p><p class="project-desc">收录 50 款小游戏，覆盖 10 个分类。通过分类浏览、详情与嵌入式试玩组织体验，以自动注册和构建前检查支持内容持续扩展。</p><ul class="details"><li>部分游戏基于开源项目改编，仓库记录来源。</li><li>AI 创作是交互演示，尚未接入生成后端。</li></ul><div class="tags"><span>Vue 3 / Vite</span><span>内容组织</span><span>自动化构建</span></div><div class="project-actions"><a class="button" href="https://awiggy.github.io/game-hub/" target="_blank" rel="noopener noreferrer">在线试玩 ↗</a><a class="text-link" href="https://github.com/awiggy/game-hub" target="_blank" rel="noopener noreferrer">项目仓库</a></div></div></article>
-</div><p class="section-foot"><a class="text-link" href="https://github.com/awiggy?tab=repositories" target="_blank" rel="noopener noreferrer">浏览全部公开仓库 ↗</a></p>
+<section class="hero" id="home" aria-labelledby="hero-title">
+<div class="hero-copy">
+<p class="handwritten salutation" lang="en">Dear curious minds,</p>
+<h1 id="hero-title" lang="en">meet<br>awiggy</h1>
+<p class="hero-tagline">把具体的问题，<span class="handwritten">make it real!</span><br>做成可以体验的作品。</p>
+<div class="hero-cta"><a class="pill" href="#projects">翻开我的笔记本 ↗</a><p class="fine">张宛瑜 · AI 产品经理</p></div>
+</div>
+<div class="hero-object"><img src="assets/notebook-awiggy.webp" width="1086" height="1448" alt="awiggy 的棕色皮革产品笔记本，封面标注 AI product" fetchpriority="high"></div>
 </section>
 
-<section class="skills-section" id="skills" aria-labelledby="skills-title"><div class="wrap"><div class="section-head"><div><p class="kicker mono">02 / REUSABLE SKILLS</p><h2 id="skills-title">不止做一次，也留下方法。</h2></div><p>把产品分析、开发交付与写作中的工作方法，<br>整理成 AI 助手可以按需调用的技能。</p></div>
-<div class="skill-grid">
-<article class="skill"><div class="skill-top"><span class="skill-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></svg></span><span class="mono">01 / DELIVER</span></div><h3>AI 产品交付工具箱</h3><p class="skill-name mono">AI PRODUCT DELIVERY SKILLS</p><p>四个独立 Skill，连接架构规划、业务实现、前端交互与发布检查。按阶段使用，明确验收要求与操作边界。</p><p class="use">适用：从想法 / PRD 推进到可验收功能。</p><a href="https://github.com/awiggy/agent-product-delivery-skills" target="_blank" rel="noopener noreferrer">查看交付工具箱 <span aria-hidden="true">↗</span></a></article>
-<article class="skill"><div class="skill-top"><span class="skill-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 6 6M7 10h6M10 7v6"/></svg></span><span class="mono">02 / ANALYZE</span></div><h3>AI 产品拆解</h3><p class="skill-name mono">REVERSE AI PRODUCT</p><p>从截图、录屏与交互证据梳理用户流程、Agent 分工和工具调用。区分已知事实与架构推断，让分析可追溯。</p><p class="use">适用：竞品研究、产品流程与架构分析。</p><a href="https://github.com/awiggy/reverse-ai-product" target="_blank" rel="noopener noreferrer">查看产品拆解 Skill <span aria-hidden="true">↗</span></a></article>
-<article class="skill"><div class="skill-top"><span class="skill-symbol" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m16 3 5 5-12 12-6 1 1-6L16 3Zm-3 3 5 5M4 15l5 5"/></svg></span><span class="mono">03 / EXPRESS</span></div><h3>中文写作共创</h3><p class="skill-name mono">HUMAN WRITING</p><p>从模糊想法开始，通过观点讨论、材料研究与结构梳理推进写作。也可以直接进入已有文章的修改和表达优化。</p><p class="use">适用：观点成文、长文共创与文章修改。</p><a href="https://github.com/awiggy/human-writing" target="_blank" rel="noopener noreferrer">查看写作共创 Skill <span aria-hidden="true">↗</span></a></article>
-</div><p class="skill-notice">交付工具箱目前为初版，不是一键上线工具。具体使用说明、依赖与验证范围见各仓库。</p><p class="section-foot"><a class="text-link" href="https://github.com/awiggy/ai-skills" target="_blank" rel="noopener noreferrer">查看完整 Skills 合集 ↗</a></p></div></section>
+<section class="intro" id="about" aria-labelledby="intro-title">
+<svg class="sticker intro-star" aria-hidden="true"><use href="#star"/></svg>
+<p class="handwritten">a little about me</p>
+<h2 id="intro-title">从数据分析，走向 AI 产品。<br>我喜欢把想法拆开，<br>再把它们<span class="marker">认真做出来。</span></h2>
+<p class="intro-body">关注 Agent、RAG 与评测。<br>先理解业务里的具体任务，再决定 AI 应该在哪里发挥作用。<br>用原型检验想法，也把常用的方法留下来。</p>
+<svg class="sticker intro-heart" aria-hidden="true"><use href="#heart"/></svg>
+<a class="small-link" href="#method">我的工作方式 ↓</a>
+</section>
 
-<section id="about" class="wrap" aria-labelledby="about-title"><div class="about-layout">
-<div><p class="kicker mono">03 / ABOUT & APPROACH</p><h2 id="about-title">理解问题，<br>比急着给答案重要。</h2><p class="bio">从数据分析走向 AI 产品，我习惯先理解一线业务和用户的任务，再决定系统应该如何帮助他们。现在，我把需求拆解、方案设计与 AI 辅助开发结合起来，用原型检验判断。</p><p class="bio">关注 Agent 工作流、RAG 知识库与评测方法。这里记录的是持续迭代中的作品，不把演示能力写成已经完成的生产能力。</p><div class="focus"><span>业务与需求</span><span>Agent 工作流</span><span>原型验证</span><span>AI 评测</span></div></div>
-<div class="methods"><article><span class="mono">01</span><div><h3>先看任务，再选工具</h3><p>明确用户、业务规则和约束。判断哪些环节需要 AI，哪些更适合确定性流程。</p></div></article><article><span class="mono">02</span><div><h3>走通流程，也检查失败路径</h3><p>把页面、接口与状态连起来，同时考虑退回、重试、断线和恢复。</p></div></article><article><span class="mono">03</span><div><h3>让验证有依据</h3><p>区分固定示例、自动化测试与真实使用效果。明确已验证项，以及仍需人工验收的部分。</p></div></article><article><span class="mono">04</span><div><h3>把人的判断留在关键位置</h3><p>涉及审批、合并和发布的操作，说明影响范围，保留确认与回退的空间。</p></div></article></div>
+<section class="notes-section" id="method" aria-labelledby="notes-title">
+<h2 id="notes-title">Everything I make.<br><span class="cn-sub">都从这些小事开始。</span></h2>
+<div class="sticky-notes">
+<article class="sticky-note"><span class="doodle" aria-hidden="true">✧</span><h3>先理解<br>真实问题</h3><p>先问为什么，<br>再决定做什么。</p><span class="smile" aria-hidden="true">⌣</span></article>
+<article class="sticky-note"><span class="doodle" aria-hidden="true">↗</span><h3>把流程<br>真正走通</h3><p>不止正常路径，<br>也考虑失败和恢复。</p></article>
+<article class="sticky-note"><span class="doodle" aria-hidden="true">✳</span><h3>验证效果<br>而非想象</h3><p>示例、测试与真实效果，<br>分开记录。</p></article>
+<article class="sticky-note"><span class="doodle" aria-hidden="true">♡</span><h3>给判断<br>留点空间</h3><p>关键操作，<br>由人确认。</p></article>
+</div>
+</section>
+
+<section class="projects" id="projects" aria-labelledby="projects-title">
+<div class="section-title"><p class="handwritten">things I've been making</p><h2 id="projects-title">Three projects.<br>Three little adventures.</h2><p class="cn-sub">三个场景，三次把想法落地的尝试。</p></div>
+<article class="project-row qingbao" id="qingbao">
+<div class="project-picture"><span class="handwritten annotation">a workflow that makes sense</span><svg class="annotation-arrow" aria-hidden="true"><use href="#arrow"/></svg><div class="screen-frame"><div class="screen-top" aria-hidden="true"><i></i><i></i><i></i><span>qingbao / expense workspace</span></div><img src="assets/qingbao-dashboard.png" width="1440" height="900" loading="lazy" alt="轻报实际运行的报销工作台，使用 TEST 演示数据"></div><p class="image-note">实际运行截图 · TEST 演示数据</p><svg class="sticker screen-flower" aria-hidden="true"><use href="#flower"/></svg></div>
+<div class="project-panel"><span class="panel-label">01 / 业务流程 · 本地 MVP</span><h3>让每笔报销，<br><span class="orange">都有下一步。</span></h3><p class="project-name">轻报 Qingbao</p><div class="feature-list">
+<details open><summary>从票据到报销单 <span>I</span></summary><p>串联上传、核对、提交、审批退回和模拟结算，覆盖员工、审批人、财务三种演示角色。</p></details>
+<details><summary>规则与 AI 各司其职 <span>II</span></summary><p>可选 macOS 本机 OCR、规则校验与模型接口；保留人工校对。真实模型服务的连通性和效果仍待验证。</p></details>
+<details><summary>异常也有去处 <span>III</span></summary><p>处理缺票、疑似重复和超标提示，保留退回重提与流转记录。当前不执行真实付款，也不是生产财务系统。</p></details>
+</div><div class="panel-actions"><a class="pill" href="https://github.com/awiggy/qingbao-expense-mvp" target="_blank" rel="noopener noreferrer">查看轻报 ↗</a><a class="small-link" href="https://github.com/awiggy/qingbao-expense-mvp/blob/main/docs/LOCAL_GUIDE.zh-CN.md" target="_blank" rel="noopener noreferrer">本地体验指南</a></div></div>
+</article>
+<article class="project-row reverse" id="git-clear">
+<div class="project-picture book-picture"><p class="handwritten annotation">make the next step clear</p><img class="project-book" src="assets/notebook-git.webp" width="1086" height="1448" alt="粉色 Git Clear 项目笔记本" loading="lazy"><svg class="sticker book-heart" aria-hidden="true"><use href="#heart"/></svg></div>
+<div class="project-panel"><span class="panel-label">02 / 桌面工具 · 可下载安装</span><h3>复杂操作，<br>也可以<span class="orange">讲清楚。</span></h3><p class="project-name">Git Agent Clear</p><div class="feature-list">
+<details open><summary>按任务，而不是按命令 <span>I</span></summary><p>将提交、同步、历史版本和冲突处理组织成清晰页面，让下一步、影响范围和撤回方式都能被理解。</p></details>
+<details><summary>AI 建议，人来确认 <span>II</span></summary><p>提供可选 AI 合并建议，由用户检查后应用。普通 Git 操作无需模型密钥。</p></details>
+<details><summary>三个桌面平台 <span>III</span></summary><p>提供 macOS、Windows、Linux 安装包。真实账号、AI 请求与应用内升级等场景仍有待验收项。</p></details>
+</div><div class="panel-actions"><a class="pill" href="https://github.com/awiggy/git-clear-desktop/releases/latest" target="_blank" rel="noopener noreferrer">下载安装 ↗</a><a class="small-link" href="https://github.com/awiggy/git-clear-desktop" target="_blank" rel="noopener noreferrer">项目仓库</a></div></div>
+</article>
+<article class="project-row game-row" id="game-hub">
+<div class="project-picture"><p class="handwritten annotation">a little room for play!</p><div class="game-display" aria-label="GAME HUB 在线小游戏合集的视觉展示，不是运行截图"><div class="game-display-top"><span>PRESS PLAY</span><span>50 GAMES / 10 CATEGORIES</span></div><div class="pixel-stage" aria-hidden="true"><div class="pixel-alien"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><strong>GAME<br>HUB</strong></div><a class="game-play" href="https://awiggy.github.io/game-hub/" target="_blank" rel="noopener noreferrer">进入游戏大厅 <span>↗</span></a></div><svg class="sticker game-bolt" aria-hidden="true"><use href="#bolt"/></svg></div>
+<div class="project-panel"><span class="panel-label">03 / 在线交互 · 可在线体验</span><h3>有时，<br>就该<span class="orange">玩一下。</span></h3><p class="project-name">游戏大全 GAME HUB</p><div class="feature-list">
+<details open><summary>从发现到点开即玩 <span>I</span></summary><p>50 款小游戏、10 个分类。通过分类浏览、详情介绍与嵌入式试玩连接发现和体验。</p></details>
+<details><summary>内容可以持续生长 <span>II</span></summary><p>统一游戏元数据、自动注册和构建前检查。部分游戏基于开源项目改编，仓库记录来源与适配说明。</p></details>
+<details><summary>清楚区分体验与演示 <span>III</span></summary><p>小游戏可在线体验。AI 创作入口目前为交互演示，尚未接入生成后端。</p></details>
+</div><div class="panel-actions"><a class="pill" href="https://awiggy.github.io/game-hub/" target="_blank" rel="noopener noreferrer">在线试玩 ↗</a><a class="small-link" href="https://github.com/awiggy/game-hub" target="_blank" rel="noopener noreferrer">项目仓库</a></div></div>
+</article>
+</section>
+
+<section class="notebook-spread" aria-labelledby="spread-title">
+<div class="spread-heading"><p class="handwritten">like making things</p><h2 id="spread-title">My projects.<br>My way.</h2><p>认真工作，也保留一点好奇心。</p></div>
+<a class="spread-book blue-book" href="#qingbao" aria-label="查看轻报项目"><span class="handwritten">a big blue idea</span><img src="assets/notebook-qingbao.webp" width="1086" height="1448" alt="蓝色云朵轻报笔记本" loading="lazy"></a>
+<a class="spread-book pink-book" href="#git-clear" aria-label="查看 Git Agent Clear 项目"><span class="handwritten">keep it clear</span><img src="assets/notebook-git.webp" width="1086" height="1448" alt="粉色 Git Clear 笔记本" loading="lazy"></a>
+<svg class="sticker spread-star" aria-hidden="true"><use href="#star"/></svg><svg class="sticker spread-flower" aria-hidden="true"><use href="#flower"/></svg>
+</section>
+
+<section class="skills" id="skills" aria-labelledby="skills-title">
+<div class="section-title"><p class="handwritten">little helpers, big possibilities</p><h2 id="skills-title">Some things are<br>worth doing again.</h2><p class="cn-sub">把常用的方法，装进三个小工具箱。</p></div>
+<div class="skill-workspace">
+<div class="skill-index" aria-label="Skills 目录"><p class="handwritten">pick a skill ↓</p>
+<a id="tab-deliver" href="#skill-deliver" data-tab="skill-deliver"><span>01</span> 产品交付 <span>↗</span></a>
+<a id="tab-analyze" href="#skill-analyze" data-tab="skill-analyze"><span>02</span> 产品拆解 <span>↗</span></a>
+<a id="tab-write" href="#skill-write" data-tab="skill-write"><span>03</span> 写作共创 <span>↗</span></a>
+<svg class="sticker skill-flower" aria-hidden="true"><use href="#flower"/></svg></div>
+<div class="skill-pages">
+<article class="skill-page" id="skill-deliver"><span class="page-number">NOTE 01 / DELIVER</span><h3>从想法，<br>走到可验收。</h3><p class="skill-name">AI Product Delivery Skills</p><p>四个独立 Skill，覆盖 Agent 架构规划、业务实现、前端交互与发布检查。按阶段调用，说明输入、输出、验收要求与操作边界。</p><div class="skill-steps"><span>架构</span><i>→</i><span>实现</span><i>→</i><span>交互</span><i>→</i><span>发布检查</span></div><p class="fine">当前为初版，不是应用脚手架或一键上线工具。</p><a class="pill" href="https://github.com/awiggy/agent-product-delivery-skills" target="_blank" rel="noopener noreferrer">打开交付工具箱 ↗</a></article>
+<article class="skill-page" id="skill-analyze"><span class="page-number">NOTE 02 / ANALYZE</span><h3>拆开产品，<br>也看清依据。</h3><p class="skill-name">Reverse AI Product</p><p>从截图、录屏与交互证据梳理用户流程、Agent 分工和工具调用。区分已知事实与架构推断，形成可追溯的分析。</p><div class="skill-steps"><span>观察</span><i>→</i><span>证据</span><i>→</i><span>分析</span></div><p class="fine">适合竞品研究与流程分析，不宣称还原产品的真实内部源码。</p><a class="pill" href="https://github.com/awiggy/reverse-ai-product" target="_blank" rel="noopener noreferrer">打开产品拆解 Skill ↗</a></article>
+<article class="skill-page" id="skill-write"><span class="page-number">NOTE 03 / EXPRESS</span><h3>让一个念头，<br>慢慢变成文章。</h3><p class="skill-name">Human Writing</p><p>从模糊想法开始，通过观点讨论、材料研究与结构梳理推进写作。也支持直接修改已有文章，打磨内容与表达。</p><div class="skill-steps"><span>观点</span><i>→</i><span>材料</span><i>→</i><span>结构</span><i>→</i><span>改稿</span></div><p class="fine">适合观点成文、长文共创与中文表达优化。</p><a class="pill" href="https://github.com/awiggy/human-writing" target="_blank" rel="noopener noreferrer">打开写作共创 Skill ↗</a></article>
+</div></div>
+<p class="collection-link"><a class="small-link" href="https://github.com/awiggy/ai-skills" target="_blank" rel="noopener noreferrer">还有更多小工具，去完整 Skills 合集看看 ↗</a></p>
+</section>
+
+<section class="sticker-break" aria-hidden="true"><svg class="sticker"><use href="#heart"/></svg><svg class="sticker"><use href="#star"/></svg><svg class="sticker"><use href="#bolt"/></svg><svg class="sticker"><use href="#flower"/></svg><svg class="sticker"><use href="#heart"/></svg><svg class="sticker"><use href="#star"/></svg></section>
+
+<section class="faq" aria-labelledby="faq-title"><p class="handwritten">a few things you might wonder</p><h2 id="faq-title">Questions?<br>Let's open the notebook.</h2><div class="faq-list">
+<details><summary>你主要关注什么方向？<span>+</span></summary><p>我是张宛瑜，从数据分析走向 AI 产品。关注 Agent 工作流、RAG 知识库与评测，习惯先理解业务任务，再通过需求拆解、原型和验证推进方案。</p></details>
+<details><summary>这些项目现在都能体验吗？<span>+</span></summary><p>GAME HUB 可以在线试玩；Git Agent Clear 提供桌面安装包；轻报需要按仓库说明在本地运行。各项目的当前状态与待验证部分都在对应仓库标明。</p></details>
+<details><summary>这些 Skills 应该怎么用？<span>+</span></summary><p>它们是提供给支持 SKILL.md 的 AI 助手的工作指引，不是独立 App。到对应仓库查看适用场景、依赖和使用方法，再按任务选择需要的 Skill。</p></details>
+<details><summary>怎样反馈问题或聊聊想法？<span>+</span></summary><p>使用问题可以提交到对应项目的 GitHub Issues。也欢迎从 <a href="https://github.com/awiggy" target="_blank" rel="noopener noreferrer">我的 GitHub 主页 ↗</a> 找到全部公开仓库。</p></details>
 </div></section>
-<section id="contact" class="wrap contact" aria-labelledby="contact-title"><div class="contact-box"><div><p class="kicker mono">LET’S COMPARE NOTES</p><h2 id="contact-title">有具体问题，就有交流的起点。</h2><p>欢迎聊 AI 产品、工作流与工具体验。使用反馈可以提交到对应项目的 Issues；更多代码与更新记录在 GitHub。</p></div><a class="button primary" href="https://github.com/awiggy" target="_blank" rel="noopener noreferrer">在 GitHub 找到我 ↗</a></div></section>
+
+<section class="closing" id="contact"><svg class="sticker closing-star" aria-hidden="true"><use href="#star"/></svg><p class="handwritten">still learning. still making.</p><h2>好的想法，<br>值得<span class="marker">动手试试。</span></h2><p>把日常观察变成产品，把实践整理成方法。<br>下一页，也许就从一次交流开始。</p><a class="pill" href="https://github.com/awiggy" target="_blank" rel="noopener noreferrer">在 GitHub 找到我 ↗</a><svg class="sticker closing-heart" aria-hidden="true"><use href="#heart"/></svg></section>
 </main>
-<footer><div class="wrap"><span>© <span id="year">2026</span> 张宛瑜 · awiggy</span><span>从具体问题出发，用可体验的作品检验想法。</span><div class="footer-links"><a href="#home">回到顶部 ↑</a><a href="https://github.com/awiggy/awiggy.github.io" target="_blank" rel="noopener noreferrer">本站源码 ↗</a></div></div></footer>
+<footer><div class="footer-top"><div><p class="handwritten">made with curiosity</p><p>张宛瑜的产品笔记本</p></div><nav aria-label="页脚导航"><a href="#projects">精选作品</a><a href="#skills">AI Skills</a><a href="#about">关于我</a><a href="https://github.com/awiggy" target="_blank" rel="noopener noreferrer">GitHub ↗</a></nav></div><a class="footer-wordmark" href="#home" aria-label="回到首页">awiggy<span aria-hidden="true">✳</span></a><div class="footer-bottom"><span>© <span id="year">2026</span> awiggy · 张宛瑜</span><a href="https://github.com/awiggy/awiggy.github.io" target="_blank" rel="noopener noreferrer">查看本站源码 ↗</a><a href="#home">翻回第一页 ↑</a></div></footer>
 <script src="site.js"></script>
 </body></html>
