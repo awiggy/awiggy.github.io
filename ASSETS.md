@@ -15,7 +15,19 @@
 - GAME HUB 图为 CSS 装饰性展示，不是运行截图。
 - 图标与贴纸是本站 SVG 形状，不来自原站素材。
 
-## 字体
+## 产品工厂新增素材（2026-10-08）
+
+- `assets/notebook-product-factory.webp`：内置 imagegen 生成的青绿色布面笔记本，参考本站 Git Clear 笔记本的材质、构图与光线；透明背景，转换为 WebP。仅为装饰性项目视觉，不是产品运行截图。
+- `assets/product-factory-workflow.png`、`assets/product-factory-settings.png`、`assets/product-factory-list.png`：使用者提供并授权展示的三张原始截图，分别为阶段工作台、执行方式设置、产品列表。原图内容未重绘，网页提供完整原图链接。
+- 对应 `*-thumb.webp` 是 600 像素宽的压缩预览，减少页面加载量。截图显示当时本地开发环境，不构成所有流程已验收的声明。
+
+生成提示词（模式：built-in imagegen；参考图：`assets/notebook-git.webp`）：
+
+```text
+Use case: product-mockup. Asset type: personal portfolio website project notebook cutout. Image 1 is a STYLE REFERENCE ONLY: match its tactile photographic notebook family, not its pink color or text. Generate one closed deep muted teal-green linen notebook for Product Factory, ivory page edges, fine woven fabric and subtle stitching, matching teal pen clipped on right. Top-down slight perspective, upright unrotated whole notebook with ample outer padding, portrait 3:4 canvas, genuinely transparent background with alpha and minimal soft shadow. Upper third: white laminated school name label with thin dark double rounded border. Exact legible text: small "Project", large black handwritten "Product" on one line and "Factory" below, bottom row small "Notes" with handwritten "idea to delivery". No number field. Soft warm afternoon studio photography. No extra text, no hands, no logos, no watermark, no backdrop. This is a decorative portfolio visual, not a screenshot.
+```
+
+## 字体与许可证
 
 本地字体采用 SIL Open Font License 1.1，许可证保留在 `assets/fonts/`：
 

@@ -5,7 +5,8 @@
 ## 页面内容
 
 - 个人介绍与工作方法：从数据分析走向 AI 产品，关注 Agent、RAG 与评测。
-- 四个项目：轻报 Qingbao、Git Agent Clear、Luma、GAME HUB；明确标注本地 MVP、可安装、本地 RC、可在线体验，以及尚待验证的部分。
+- 五个项目：产品工厂 Product Factory、轻报 Qingbao、Git Agent Clear、Luma、GAME HUB；明确标注本地控制台、本地 MVP、可安装、本地 RC、可在线体验，以及尚待验证的部分。
+- 产品工厂配有独立生成的青绿色笔记本视觉，以及三张可点击查看原图的真实界面预览。
 - 三个精选 Skills：产品交付、产品拆解、写作共创；附完整合集入口。
 - 问答、GitHub 联系入口；不使用虚构履历、客户统计或示例联系方式。
 

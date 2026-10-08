@@ -1,4 +1,11 @@
 @font-face{font-family:Lilita;src:url("assets/fonts/LilitaOne-Regular.ttf") format("truetype");font-display:swap}
+.factory-picture .factory-book{width:76%;height:auto;max-height:520px;object-fit:contain;transform:rotate(6deg);margin:0 auto 28px}
+.factory-previews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}
+.factory-previews a{display:block;min-width:0;background:#fdfbf9;border:1px solid #b7c6bf;border-radius:9px;overflow:hidden;transition:transform .2s}
+.factory-previews a:hover{transform:translateY(-4px)}
+.factory-previews img{display:block;width:100%;height:auto}
+.factory-previews span{display:block;text-align:center;font:12px/1.5 var(--sans);padding:9px 3px}
+@media(max-width:760px){.factory-picture .factory-book{max-height:380px}.factory-previews{gap:7px}.factory-previews span{font-size:10px}}
 @font-face{font-family:Fraunces;src:url("assets/fonts/Fraunces.ttf") format("truetype");font-weight:100 900;font-display:swap}
 @font-face{font-family:Caveat;src:url("assets/fonts/Caveat.ttf") format("truetype");font-weight:400 700;font-display:swap}
 :root{--paper:#fdfbf9;--warm:#f7efe9;--ink:#2b1a07;--orange:#ff6f1e;--muted:#827564;--line:#d5c5b9;--serif:Fraunces,"Songti SC","STSong","Noto Serif CJK SC",Georgia,serif;--sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
