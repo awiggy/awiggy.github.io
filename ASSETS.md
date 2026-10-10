@@ -15,10 +15,10 @@
 - GAME HUB 图为 CSS 装饰性展示，不是运行截图。
 - 图标与贴纸是本站 SVG 形状，不来自原站素材。
 
-## 产品工厂新增素材（2026-10-08）
+## 产品工厂素材（配图 2026-10-08；截图更新 2026-10-10）
 
 - `assets/notebook-product-factory.webp`：内置 imagegen 生成的青绿色布面笔记本，参考本站 Git Clear 笔记本的材质、构图与光线；透明背景，转换为 WebP。仅为装饰性项目视觉，不是产品运行截图。
-- `assets/product-factory-workflow.png`、`assets/product-factory-settings.png`、`assets/product-factory-list.png`：使用者提供并授权展示的三张原始截图，分别为阶段工作台、执行方式设置、产品列表。原图内容未重绘，网页提供完整原图链接。
+- `assets/product-factory-dashboard.png`、`assets/product-factory-create.png`、`assets/product-factory-executors.png`：使用者于 2026-10-10 提供并授权替换的三张深色版原始截图，依次为首页待办、创建产品、执行方式设置。原图内容未重绘，网页提供完整原图链接。已替换旧版浅色截图，旧图可从 Git 历史回溯。
 - 对应 `*-thumb.webp` 是 600 像素宽的压缩预览，减少页面加载量。截图显示当时本地开发环境，不构成所有流程已验收的声明。
 
 生成提示词（模式：built-in imagegen；参考图：`assets/notebook-git.webp`）：
